@@ -1,0 +1,21 @@
+// TODO: usar estrategia que corresponda segun parametro de entrada
+
+inputs:
+  type:
+    description: 'Project type [node, react, flutter]'
+    required: true
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Imprimir configuraciones
+        run: |
+          echo "type: ${{ inputs.type }}"
