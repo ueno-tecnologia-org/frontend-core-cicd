@@ -1,14 +1,15 @@
 // TODO: usar estrategia que corresponda segun parametro de entrada
 
-inputs:
-  type:
-    description: 'Project type [node, react, flutter]'
-    required: true
-
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      type:
+        description: 'Project type [node, react, flutter]'
+        type: string
+        required: true
 
 jobs:
   build:
@@ -17,4 +18,4 @@ jobs:
     steps:
       - name: Imprimir configuraciones
         run: |
-          echo "type: ${{ inputs.type }}"
+          echo "type: ${{ github.event.inputs.type }}"
