@@ -6,10 +6,9 @@ inputs:
     required: true
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
+  push:
+    branches:
+      - main
 
 jobs:
   build:
