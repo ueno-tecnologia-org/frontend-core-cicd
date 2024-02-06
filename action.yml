@@ -4,12 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-    inputs:
-      type:
-        description: 'Project type [node, react, flutter]'
-        type: string
-        required: true
 
 jobs:
   build:
