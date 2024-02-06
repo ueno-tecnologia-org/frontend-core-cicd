@@ -10,5 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 20
+      - name: Checkout Code
         uses: ../common/checkout.yml
+      - run: yarn install
+      - run: yarn build
+      - run: yarn test
+      - name: Quality
+        uses: ../common/sonar.yml
+      - name: Security
+        uses: ../common/security.yml
