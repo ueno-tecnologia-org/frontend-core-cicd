@@ -1,0 +1,14 @@
+name: Node.js library CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: ../common/checkout.yml
