@@ -1,3 +1,7 @@
+inputs:
+  type:
+    description: 'Set always-auth in npmrc.'
+    default: 'false'
 on:
   push:
     branches:
