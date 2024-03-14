@@ -1,8 +1,7 @@
 #!/bin/bash
 
-echo "building production ios artifact..."
+echo "building development ios artifact..."
 
-echo "$IOS_PRODUCTION_FIREBASE" > credentials/firebase/GoogleService-Info.plist
 flutter pub run flutter_flavorizr -p assets:download
 flutter pub run flutter_flavorizr -p assets:extract
 flutter pub run flutter_flavorizr -p ios:xcconfig
