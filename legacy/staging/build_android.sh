@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "building staging android artifact..."
+
 echo "$ANDROID_STAGING_FIREBASE" > credentials/firebase/google-services.json
 flutter pub run flutter_flavorizr -p assets:download
 flutter pub run flutter_flavorizr -p assets:extract
