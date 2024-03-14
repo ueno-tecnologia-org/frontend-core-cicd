@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo "building android artifact..."
-sh scripts/add_crashlytics.sh gms flutter
-sh ./ueno_flutter_mobile_cicd/build.sh appbundle prod firebase
-mv build/app/outputs/bundle/prodRelease/app-prod-release.aab build/app/outputs/bundle/prodRelease/app-prod-release-playstore.aab
+echo "building production android artifact..."
+make remove_huawei
+sh ./frontend-core-cicd/legacy/build.sh apk production_firebase lib/main_production_firebase.dart
